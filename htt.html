@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive E-Commerce Website Design Tutorial</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css">
+    <!-- owl carousel css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="smd.js"></script>
+
+</head>
+<body>
+<script>
+    function sendEmail() {
+    var price=document.getElementById("cart-total-value").innerHTML;
+    var mail=document.getElementById("mail").value;
+    if(price ==0){
+        alert("your cart is empty")
+    }
+    else{
+    window.alert("order placed");
+          Email.send({
+              Host: "smtp.gmail.com",
+              Username: "onware121@gmail.com",
+		      Password: "ONWARE121$",
+		      To: mail,
+		      From: "onware121@gmail.com",
+              Subject : "Order Placed",
+              Body :`Order Value-${price}
+                     
+                     ThankYou for placing order, Your order will be delivered in 2 weeks.
+                    ,Team OnWare`,
+          })
+          .then(function(message){
+              alert("mail sent successfully")
+          });
+        }
+}
+</script>
+
+<!-- header section starts  -->
+
+<header>
+    <nav class = "navbar">
+      <div>
+        <a href = "index.html" class = "navbar-brand"><img src="images/logo.png" width="60px" height="60px" alt=""></a>
+      </div>
+
+        <div class="header-2">
+
+            <div class="navbar1">
+                <ul>
+                    <li><a class="active" href="index.html" style="color: yellow;">home</a></li>
+                    <li><a href="#arrival">arrival</a></li>
+                    <li><a href="#featured">featured</a></li>
+                    <li><a href="#gallery">gallery</a></li>
+                    <li><a href="#deal">deal</a></li>
+                    <li><a href="registration.html">Sellers</a></li>
+                    <li><a href="aboutus.html">Aboutus</a></li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Services</a>
+                        <div class="dropdown-menu" style="background-color: #2980b9;">
+                          <a class="dropdown-item fas fa-car" style="color: black;" href="car.html"> Cars-Accesories</a>
+                          <a class="dropdown-item fas fa-motorcycle" style="color: black;" href="#">  Bikes-Parts</a>
+                          <a class="dropdown-item fas fa-truck" style="color: black;" href="#"> Truck-parts</a>
+                          <a class="dropdown-item fas fa-bus" style="color: black;" href="#"> Bus-parts</a>
+                          <a class="dropdown-item fas fa-subway" style="color: black;"href="#"> Automobile-parts</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item fas fa-truck-monster"  style="color: black;"href="#"> Other-parts</a>
+                        </div>
+        
+                      </li>
+                    -->
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class = "cart">
+          <button type = "button" id = "cart-btn">
+            <i class = "fas fa-shopping-cart"></i>
+            <span id = "cart-count-info"></span>
+          </button>
+          
+          <div class = "cart-container">
+            <div class = "cart-list">
+              <!-- single item -->
+              <!-- <div class = "cart-item">
+                <img src = "images/armchair.png" alt = "product image">
+                <div class = "cart-item-info">
+                  <h3 class = "cart-item-name">Arm Chair</h3>
+                  <span class = "cart-item-category">Chair</span>
+                  <span class = "cart-item-price">$120.00</span>
+                </div>
+
+                <button type = "button" class = "cart-item-del-btn">
+                  <i class = "fas fa-times"></i>
+                </button>
+              </div> -->
+              <!-- end of single item  -->
+            </div>
+            <form method="post" action="upload_script" enctype="multipart/form-data">
+            <div class = "form-group py-3">
+                <input type="email"  style="
+                border: none;
+                cursor: pointer;
+                padding: 15px 24px;
+                font-size: 24px;" required id="mail" placeholder="enter mail for updates"> 
+            </div>
+            <div class = "form-group cart-total">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="PlaceOrder" class="bg-bold" style="background-color: #004d80;
+                border: none;
+                cursor: pointer;
+                color: white;
+                padding: 10px 25px;
+                font-size: 16px;"  onclick="sendEmail()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+              <h3>Total: $</h3>
+              <span id = "cart-total-value"></span>
+              
+            </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+<div class="home-slider owl-carousel">
+
+    <div class="item">
+        <img src="images/carcarousel.jpg" alt="">
+        <div class="content">
+            <h3>Car Parts</h3>
+            <p>Any Type Of Cars-Accesories Available Here</p>
+            <a href="#arrival"><button class="btn">discover</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/bikecarosel.jpg" alt="">
+        <div class="content">
+            <h3>Bike Parts</h3>
+            <p>Any Type Of Bikes-Accesories Available Here</p>
+            <a href="#featured"><button class="btn">discover</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/truckcarosel.jpg" alt="">
+        <div class="content">
+            <h3>Truck Accesories</h3>
+            <p>Any Type Of Truck-Accesories Available Here</p>
+            <a href="#deal"><button class="btn">discover</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/buscarosel.jpg" alt="">
+        <div class="content">
+            <h3>Bus Accesories</h3>
+            <p>Any Type Of Bus-Accesories Available Here</p>
+            <a href="#gallery"><button class="btn">discover</button></a>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- arrival section starts  -->
+
+<section class = "products">
+      <div class = "container">
+        <h2>Our Products</h2>
+        <div class = "product-list">
+          <!-- single item -->
+          <!-- <div class = "product-item">
+            <div class = "product-img">
+              <img src = "images/bed.png" alt = "product image">
+              <button type = "button" class = "add-to-cart-btn">
+                <i class = "fas fa-shopping-cart"></i>Add To Cart
+              </button>
+            </div>
+
+            <div class = "product-content">
+              <h3 class = "product-name">Wooden Bed</h3>
+              <span class = "product-category">Bed</span>
+              <p class = "product-price">$120.00</p>
+            </div>
+          </div> -->
+          <!-- end of single item -->
+        </div>
+      </div>
+    </section>
+
+<!-- arrival section ends -->
+
+<!-- featured section starts  -->
+
+<section class="feature" id="featured">
+
+<h1 class="heading"> <span> featured product </span> </h1>
+
+<div class="row">
+
+    <div class="image-container">
+
+        <div class="big-image">
+            <img src="images/discbrakes.jpg" alt="">
+        </div>
+
+        <div class="small-image">
+            <img class="image-active" src="images/discbrakes.jpg" alt="">
+            <img src="images/drumbrakes.jpg" alt="">
+            <img src="images/brake3.jpg" alt="">
+            <img src="images/brake4.jpg" alt="">
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <h3><span class="shop-item-title">Brakes</span></h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(500+) reviews</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, at!</p>
+        <strong class="price">₹2000-₹5000/- <span>₹7000</span> </strong>
+       
+    </div>
+
+</div>
+
+</section>
+
+<!-- featured section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+<h1 class="heading"> <span> product gallery </span> </h1>
+
+<ul class="controls">
+    <li class="btn button-active" data-filter="all">all</li>
+    <li class="btn" data-filter="Wheel">Wheel</li>
+    <li class="btn" data-filter="Exchaust">Exchaust</li>
+    <li class="btn" data-filter="Dashboard">Dashboard</li>
+    <li class="btn" data-filter="wipers">wipers</li>
+    <li class="btn" data-filter="brake">fuel tank</li>
+    <li class="btn" data-filter="rare-view-mirrors">rare-view-mirrors</li>
+</ul>
+
+<div class="image-container">
+
+    <div class="box Wheel">
+        <div class="image">
+            <img src="images/wheel.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>wheel</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box Wheel">
+        <div class="image">
+            <img src="images/tyre.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>Tyre</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box Dashboard">
+        <div class="image">
+            <img src="images/dashboard.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>dashboard</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box wipers">
+        <div class="image">
+            <img src="images/wipers.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>wipers</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box Exchaust">
+        <div class="image">
+            <img src="images/gas tank.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>gas tank</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box Exchaust">
+        <div class="image">
+            <img src="images/exchaust pipe.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>exchaust pipe</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box rare-view-mirrors">
+        <div class="image">
+            <img src="images/mirrors.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>mirrors</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <div class="box brake">
+        <div class="image">
+            <img src="images/brake3.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>brake</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="box brake">
+        <div class="image">
+            <img src="images/discbrakes.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>discbrakes</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="box brake">
+        <div class="image">
+            <img src="images/drumbrakes.jpg" alt="">
+        </div>
+        <div class="info">
+            <h3>drumbrakes</h3>
+            <div class="subInfo">
+                <strong class="price">₹1000</strong>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- deal section starts  -->
+
+<section class="deal" id="deal">
+
+<h1 class="heading"> <span> best deals </span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <img src="images/deal1.jpg" alt="">
+        <div class="content">
+            <h3>purchase on nuts and bolts</h3>
+            <p>upto 25% off on first purchase</p>
+            <a href="#"><button class="btn">explore</button></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/deal2.jpg" alt="">
+        <div class="content">
+            <h3>Total outer design of Automobile</h3>
+            <p>upto 25% off on first purchase</p>
+            <a href="#"><button class="btn">explore</button></a>
+        </div>
+    </div>
+
+</div>
+
+<div class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>fast delivery</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-user-clock"></i>
+        <h3>24 x 7 support</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-money-check-alt"></i>
+        <h3>easy payments</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-box"></i>
+        <h3>10 days replacements</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, molestiae?</p>
+    </div>
+
+</div>
+
+</section>
+
+<!-- deal section ends -->
+
+<!-- newsletter section starts  -->
+
+<section class="newsletter">
+
+    <h1>newsletter</h1>
+    <p>get in touch for latest discounts and updates</p>
+    <form action="">
+        <input type="email" placeholder="enter your email">
+        <input type="submit" class="btn">
+    </form>
+
+</section>
+
+<!-- newsletter section ends -->
+
+<!-- footer section starts  -->
+
+<footer class="full-footer">
+    <div class="container top-footer p-3 p-1">
+      <div class="row">
+        <div class="col-3 pl-4 pr-4">
+          <img class="img-fluid" src="logo.png"  alt="">
+          <a style="color:silver;" class="p-1" href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+          <a style="color: silver;" class="p-1" href="#"><i class="fab fa-2x fa-google-plus-square"></i></a>
+          <a style="color: silver;" class="p-1" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+          <a style="color: silver;" class="p-1" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+        </div>
+
+        <div class="col-3  pl-4 pr-4">
+          <h1>Important Links</h1>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">Youtube Channel Link </a><br>
+          <a href="#">Blog Articles </a><br>
+          <a href="#">Social Media</a>
+        </div>
+
+        <div class="col-3  pl-4 pr-4">
+          <h1>Our Services</h1>
+          <a href="#"><i class="fas fa-car"></i>Cars-Accesories</a><br>
+          <a href="#"><i class="fas fa-motorcycle"></i>bikes-Accesories</a><br>
+          <a href="#"><i class="fas fa-truck"></i>trucks-Accesories</a><br>
+          <a href="#"><i class="fas fa-bus"></i>buses-Accesories</a><br>
+          <a href="#"><i class="fas fa-subway"></i>Automobile-Accesories</a>
+        </div>
+
+        <div class="col-3  pl-4 pr-4">
+          <h1>Contact Us</h1>
+          <a href="#"><i class="fas fa-phone"></i> +(91) 9090909090 </a><br>
+          <a href="OnWare@gmail.com  "><i class="fas fa-envelope"></i> OnWare@gmail.com </a><br>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30482.069585991638!2d78.29435671172955!3d17.254714790830658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8da620f9d%3A0x19d0d79257022687!2sVardhaman%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1643542439895!5m2!1sen!2sin"
+              frameborder="0"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bottom-footer pt-2">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>Copyrights © 2022 - All rights reserved</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- owl carousel js file cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/js.js"></script>
+    
+</body>
+</html>

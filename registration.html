@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="logo1.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript">
+    function sendEmail() {
+      
+      var name = document.getElementById("firstName").value;
+      var email = document.getElementById("email").value;
+      var number = document.getElementById("number1").value;
+      var products = document.getElementById("products").value;
+      var country = document.getElementById("country").value;
+      var state = document.getElementById("state").value;
+      var zip = document.getElementById("zip").value;
+      
+      document.write(name);
+			Email.send({
+        Host: "smtp.gmail.com",
+        Username: "onware111@gmail.com",
+		    Password: "ONWARE121$",
+		    To: 'amaansmd9@gmail.com',
+		    From: "onware111@gmail.com",
+				Subject : "Seller Details",
+				Body : `the dealer name - ${name} <br>
+                Phone number - ${number} <br>
+                email address- ${email} <br>
+                Product deatils- ${products} <br>
+                State- ${state} <br>
+                Pin code- ${zip} <br>
+                Country-${country} <br>`,
+			})
+			.then(function(message){
+				alert("mail sent successfully")
+			});
+		}
+
+
+  </script>
+
+    <title>Sell Items - OnWare</title>
+
+    <link rel="icon" href="logo1.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="logo1.jpeg">
+
+    <title>Upload Product</title>
+  </head>
+<style>
+.contact-form{
+    background: skyblue;
+    margin-top: 10%;
+    margin-bottom: 5%; 
+    width: 70%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 20%;
+    margin-top: -3%;
+
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -1%;
+}
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0f0c0c;
+    font-family: sans-serif;
+    color: #34435e;
+}
+.contact-form .btnContact {
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    padding:  1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5%;
+}
+</style>
+  <body>
+      
+      <header>
+        <nav class = "navbar">
+          <div>
+            <a href = "index.html" class = "navbar-brand"><img src="images/logo.png" width="60px" height="60px" alt=""></a>
+          </div>
+    
+            <div class="header-2">
+    
+                <div class="navbar1">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="registration.html" style="color: yellow;">Sellers</a></li>
+                        <li><a href="aboutus.html">Aboutus</a></li>
+                        <!--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Services</a>
+                            <div class="dropdown-menu" style="background-color: #2980b9;">
+                              <a class="dropdown-item fas fa-car" style="color: black;" href="car.html"> Cars-Accesories</a>
+                              <a class="dropdown-item fas fa-motorcycle" style="color: black;" href="#">  Bikes-Parts</a>
+                              <a class="dropdown-item fas fa-truck" style="color: black;" href="#"> Truck-parts</a>
+                              <a class="dropdown-item fas fa-bus" style="color: black;" href="#"> Bus-parts</a>
+                              <a class="dropdown-item fas fa-subway" style="color: black;"href="#"> Automobile-parts</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item fas fa-truck-monster"  style="color: black;"href="#"> Other-parts</a>
+                            </div>
+            
+                          </li>
+                        -->
+                        
+                    </ul>
+                </div>
+            </div>
+          </nav>
+      
+      </header>
+    <section class="breadcrumbs-section py-2" style="font-size: medium;">
+      <div class="container p-1 p-sm-3">
+        <div class="row">
+          <div class="col-12">
+            <h2>Sell Items</h2>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Sell Items</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+  
+    </section>
+    <div class="container contact-form" style="border-radius: 30px; font-size: medium;">
+      <div class="contact-image offset-5">
+        <img src="logo1.jpeg" alt=""/>
+      </div>
+      <form method="post" action="upload_script" enctype="multipart/form-data">
+        <h3>Enter the Details</h3>
+          <div class="offset-3 col-sm-6">
+            <div class="form-group">
+              <input type="text" name="firstname" id="firstName" class="form-control" placeholder="First Name " value="" />
+            </div>
+           
+          </div><div class="offset-3 col-sm-6">
+          <div class="form-group">
+            <input type="text" name="lastname" required id="lastName" class="form-control" placeholder="Last Name " value="" />
+          </div>
+     
+      </div>
+        <div class="offset-3 col-sm-6">
+          <div class="form-group">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" value="" />
+          </div>
+  
+          <div class="form-group">
+            <input type="number" name="mobile1" id="number1" class="form-control" placeholder="Enter Phone Number1" value="" />
+          </div>
+         
+          <div class="form-group">
+            <input type="number" name="mobile2" required id="number2" class="form-control" placeholder="Enter Phone Number 2 " value="" />
+          </div>
+          
+        </div>
+        <div class="offset-3 col-sm-6">
+          <div class="form-group">
+            <textarea name="address" id="products" class="form-control" placeholder="Enter product Details" style="width: 100%; height: 150px;"></textarea>
+          </div>
+          
+          
+        </div>
+      
+        <div class="offset-3 col-sm-6">
+         
+        <div class="col-sm-8">
+          <div class="form-group">
+            <select class="custom-select form-control" name="country"  id="country"  required="">
+              <option value="choose">Select Country</option>
+              <option value="india">India</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <select class="custom-select form-control" name="state"  id="state" required="">
+              <option value="choose">Select State</option>
+              <option value="telangana">AndhraPradesh</option>
+              <option value="telangana">Telangana</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="number" name="zip" id="zip" class="form-control" placeholder="Enter ZIP" value="" />
+          </div>
+        </div>
+    </div>
+      
+      <div class="form-group">
+        <div class = "row">
+          
+          <div class="offset-3 col-sm-6">
+            <input type="button" name="btnSubmit" required id="btnSubmit" class="btnContact bg-success" value="Send Email" onclick="sendEmail()" />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

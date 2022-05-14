@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp-Onware</title>
+    <link rel="shortcut icon" href="logo1.jpeg">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="logo1.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
+<!-- Import Firebase Authentication-->
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+</head>
+<style>
+    .center{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 400px;
+    border-radius: 10px;
+}
+.center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid black;
+   
+}
+.center f1{
+    padding: 5px 40px;
+    box-sizing: content-box;
+}
+.f1 .txt{
+    position: relative;
+    border-bottom: 1px solid rgb(58, 52, 52);
+    margin: 30px 40px;
+    
+
+}
+
+.txt input{
+    border: none;
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    cursor: pointer;
+    width: 36%;
+}
+
+.pass:hover{
+    color: #004d80;
+    text-decoration: underline;
+}
+input[type="submit"]{
+    width: 100% ;
+    height: 50px;
+    background-color: #004d80;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid;
+}
+
+input[type="submit"]:hover{
+    border-color: #004d80;
+    transition: .5s;
+}
+
+.signin{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.signin a{
+    color: #004d80;
+    text-decoration: none;
+}
+
+.signin a:hover{
+    text-decoration: underline;
+    
+}
+body{
+    background-color:linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+}
+</style> 
+  
+
+<body style="margin: 0; padding: 0; background-color: #004d80;">
+<div class="center">
+    <h1>Signin</h1>
+    <div class="f1">
+    <div class="txt">
+            <input type="email" required id="email" name="email" placeholder="email"><br>
+        </div>  
+    <!--<div class="txt">
+        <input type="text" required id="name" name="name" placeholder="username"><br>
+    </div>
+-->
+    <div class="txt">
+    <input type="password" required id="pwd" name="password" placeholder="password"><br>
+    </div>
+    <input type="submit" id="sighUp" value="Sign in" >
+    <div class="signin" >
+        Click on  <a href="signup.html">Sign up</a>
+    </div>  
+</div>
+    
+</div>
+    
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getDatabase, set , ref, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAG0ntHm5nriVxdMz67wFe1suSNGqor1Zg",
+      authDomain: "onware-b4372.firebaseapp.com",
+      databaseURL: "https://onware-b4372-default-rtdb.firebaseio.com",
+      projectId: "onware-b4372",
+      storageBucket: "onware-b4372.appspot.com",
+      messagingSenderId: "475641464223",
+      appId: "1:475641464223:web:6bbfe6f61183d5a896e9aa"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    sighUp.addEventListener('click',(e) =>{
+    
+    var email=document.getElementById('email').value  
+    /*var name=document.getElementById('name').value;*/
+    var password=document.getElementById('pwd').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    const dt = new Date();
+    update(ref(database,"users/" +user.uid),{
+            last_time: dt
+
+        })
+        alert('user logged in');
+        window.location= 'home.html';
+    // ...
+  })
+    .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert(errorMessage);
+  });
+
+});
+  </script>
+</html>

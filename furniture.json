@@ -1,0 +1,121 @@
+[
+    {
+        "name" : "Brake",
+        "category" : "bike",
+        "price" : "1000",
+        "imgSrc" : "images/brake3.jpg"
+    },
+    {
+        "name" : "Brake",
+        "category" : "bike",
+        "price" : "2000",
+        "imgSrc" : "images/brake4.jpg"
+    },
+    {
+        "name" : "Dashboard",
+        "category" : "car",
+        "price" : "4000",
+        "imgSrc" : "images/dashboard.jpg"
+    },
+    {
+        "name" : "Disc brake",
+        "category" : "bike",
+        "price" : "3000",
+        "imgSrc" : "images/discbrakes.jpg"
+    },
+    {
+        "name" : "Drum brake",
+        "category" : "bike",
+        "price" : "2000",
+        "imgSrc" : "images/drumbrakes.jpg"
+    },
+    {
+        "name" : "Exhaust pipe",
+        "category" : "Automobiles",
+        "price" : "1200",
+        "imgSrc" : "images/exchaust pipe.jpg"
+    },
+    {
+        "name" : "Gas tank",
+        "category" : "truck",
+        "price" : "12000",
+        "imgSrc" : "images/gas tank.jpg"
+    },
+    {
+        "name" : "Rear View mirrors",
+        "category" : "Bike and Car",
+        "price" : "3000",
+        "imgSrc" : "images/mirrors.jpg"
+    },
+    { "name" : "Tyre",
+        "category" : "Automobiles",
+        "price" : "3000",
+        "imgSrc" : "images/tyre.jpg"
+    },
+    {
+        "name" : "Wheel",
+        "category" : "Automobile",
+        "price" : "6000",
+        "imgSrc" : "images/wheel.jpg"
+    },
+    {
+        "name" : "Wipers",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/wipers.jpg"
+    },
+    {
+        "name" : "Bus engine",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/bus engine.png"
+    },
+    {
+        "name" : "Truck tyre",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/trucktyre.jpg"
+    },
+    {
+        "name" : "Bike tyre",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/biketyre.jpg"
+    },
+    {
+        "name" : "Clutch kit",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/clutch.jpg"
+    },
+    {
+        "name" : "Cables",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/cables.jpg"
+    },
+    {
+        "name" : "Bike engine",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/bike engine.jpg"
+    },
+    {
+        "name" : "Bus tyre",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/bustyre.jpg"
+    },
+    {
+        "name" : "Truck engine",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/trunkengine.jpg"
+    },
+    {
+        "name" : "Suspension",
+        "category" : "Automobile",
+        "price" : "1000",
+        "imgSrc" : "images/suspension.jpg"
+    }
+]

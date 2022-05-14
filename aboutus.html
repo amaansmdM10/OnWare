@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onware</title>
+    <link rel="shortcut icon" href="logo1.jpeg">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css">
+    <!-- owl carousel css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+  <title>About Us - OnWare</title>
+</head>
+
+<script>
+  function sendEmail1() {
+    var mail=document.getElementById("mail").value;
+  
+
+    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+        window.alert("order placed");
+          Email.send({
+              Host: "smtp.gmail.com",
+              Username: "onware111@gmail.com",
+		      Password: "Onware121$",
+		      To: mail,
+		      From: "onware111@gmail.com",
+              Subject : "Order Placed",
+              Body :`Thank you, for subcribing to our website!!.stay tuned for updates.<br> 
+                    ,Team OnWare`,
+          })
+          .then(function(message){
+              alert("mail sent successfully")
+          });
+        
+    }
+    else{
+         alert("invalid credentials")
+
+        }
+
+} 
+</script>
+<body>
+  <header>
+
+    
+    <nav class = "navbar">
+      <div>
+        <a href = "index.html" class = "navbar-brand"><img src="images/logo.png" width="60px" height="60px" alt=""></a>
+      </div>
+
+        <div class="header-2">
+
+            <div class="navbar1">
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="registration.html">Sellers</a></li>
+                    <li><a class="active" href="aboutus.html" style="color: yellow;">Aboutus</a></li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Services</a>
+                        <div class="dropdown-menu" style="background-color: #2980b9;">
+                          <a class="dropdown-item fas fa-car" style="color: black;" href="car.html"> Cars-Accesories</a>
+                          <a class="dropdown-item fas fa-motorcycle" style="color: black;" href="#">  Bikes-Parts</a>
+                          <a class="dropdown-item fas fa-truck" style="color: black;" href="#"> Truck-parts</a>
+                          <a class="dropdown-item fas fa-bus" style="color: black;" href="#"> Bus-parts</a>
+                          <a class="dropdown-item fas fa-subway" style="color: black;"href="#"> Automobile-parts</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item fas fa-truck-monster"  style="color: black;"href="#"> Other-parts</a>
+                        </div>
+        
+                      </li>
+                    -->
+                    
+                </ul>
+            </div>
+        </div>
+        </nav>
+    
+    </header>
+  <section class="breadcrumbs-section">
+    <div class="container p-1 p-sm-3">
+      <div class="row">
+        <div class="col-12">
+          <h1>About Us</h1>
+          <ol class="breadcrumb" style="font-size: medium;">
+            <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+            <li class="breadcrumb-item active">About Us</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="about-company-section">
+    <div class="container p-1 p-sm-3">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>About OnWare</h2>
+          <hr />
+        </div>
+
+        <div class="col-md-3">
+          <img class="img-fluid" src="logo1.jpeg" alt="">
+
+        </div>
+
+        <div class="col-md-9" style="font-size: medium;">
+          <p>
+            Onware is an E-commerce website.We sell automobile parts on this website.
+            Here customers can buy automobile parts directly from sellers at a very low cost.
+          </p>
+          <p>
+             The main objective of this project is to provide automobile parts at a cheap price to the customer.
+             We act as a mediator between small scale manufacturers and the customer.It is cost-effective. 
+          </p>
+          <p>
+            We  provide B2B[to retailers] or B2C[to customers] services.
+            Customers receive parts at relatively less price for purchasing from our website. ​
+          </p>
+	  <p>
+            The automobile parts are manufactured by manufacturers who sell the automobile parts at a relatively less price when 
+            compared to the orginal automobile company.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="newsletter">
+
+    <h1>Newsletter</h1>
+    <p>Get in touch for latest discounts and updates</p>
+    <form method="post" action="upload_script" enctype="multipart/form-data">
+        <input type="email" id="mail" class="form-group" placeholder="enter your email">
+        <input type="button" class="form-group btn" value="submit" style="border-radius: 30px ;" onclick="sendEmail1()">
+    </form>
+
+</section>
+
+  <section class="pt-3 pb-4">
+      <div class="container">
+          <div class="row mt-4">
+            <div class="col text-center">
+              <h3>
+                Our awesome team
+              </h3>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <img class="img-fluid qualities-img p-4" src="imgs/team/CEO.png">
+              <h5>
+                Co-Founder
+              </h5>
+              <p>
+                <i>-Amaan Smd</i>
+              </p>
+    
+            </div>
+            <div class="col-md-4 text-center">
+              <img class="img-fluid qualities-img p-4" src="imgs/team/senior-analyst.png">
+              <h5>
+                Co-Founder
+              </h5>
+              <p>
+                <i>-Nishal MadhavaRao</i>
+              </p>
+    
+            </div>
+            <div class="col-md-4 text-center">
+              <img class="img-fluid qualities-img p-4" src="imgs/team/java-developer.png">
+              <h5>
+                Co-Founder
+              </h5>
+              <p>
+                <i>- Jignyas</i>
+              </p>
+          </div>
+          </div>
+    
+  </section>
+<section class="pt-3 pb-4 clients-section" style="background-color: #f0f0f0;">
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h3>
+                Some of our trusted clients.
+            </h3>
+          </div>
+         
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/apple.png" alt="Card image cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/google.png" alt="Card image cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/infosys.png" alt="Card image cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/lnt.png" alt="Card image cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/netflix1.png" alt="Card image cap">
+            </div>
+            <div class="col-md-2 col-6">
+              <img class="img-fluid feature-img p-2" src="imgs/clients/yahoo.png" alt="Card image cap">
+            </div>
+          </div>
+        
+  
+       
+  </section>
+
+
+  <footer
+  class="text-center text-lg-start text-white"
+  style="background-color: #1c2331;
+  font-size: large;"
+  >
+<!-- Section: Social media -->
+<section
+     class="d-flex justify-content-between p-4"
+style="background-color:#004d80;"
+     >
+<!-- Left -->
+<div class="me-5">
+<span>Get connected with us on social networks:</span>
+</div>
+<!-- Left -->
+
+<!-- Right -->
+<div>
+<a href="" class="text-white me-4">
+  <i class="fab fa-facebook-f"></i>&nbsp;
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-twitter"></i>&nbsp;
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-google"></i>&nbsp;
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-instagram"></i>&nbsp;
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-linkedin"></i>&nbsp;
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-github"></i>&nbsp;
+</a>
+</div>
+<!-- Right -->
+</section>
+<!-- Section: Social media -->
+
+<!-- Section: Links  -->
+<section class="">
+<div class="container text-center text-md-start mt-5">
+<!-- Grid row -->
+<div class="row mt-3">
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    <!-- Content -->
+    <h3 class="text-uppercase fw-bold">OnWare</h3>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #004d80; height: 2px"
+        />
+    <p style="text-align:justify; color: black;">
+      Online platform to sell the Automobile Accesories for resonable and low prices.
+    </p>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    <!-- Links -->
+    <h3 class="text-uppercase fw-bold">Useful links</h3>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #004d80; height: 2px"
+        />
+    <p>
+      <a href="#!">Aboutus</a>
+    </p>
+    <p>
+      <a href="#!">Seller</a>
+    </p>
+    <p id="arrival">
+      <a href="#arrival">Arrival</a>
+    </p>
+    <p>
+      <a href="signup.html">Signup</a>
+    </p>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    <!-- Links -->
+    <h3 class="text-uppercase fw-bold">Contact</h3>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #004d80; height: 2px"
+        />
+    <p><i class="fas fa-home mr-3"></i>Hyderabad,Telengana</p>
+    <a href="#"><i class="fas fa-phone"></i> +(91) 9090909090 </a><br>
+    <a href="OnWare@gmail.com  "><i class="fas fa-envelope"></i> OnWare@gmail.com </a><br>
+  </div>
+  <!-- Grid column -->
+  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      <!-- Links -->
+      <h3 class="text-uppercase fw-bold">Location</h3>
+      <hr
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 60px; background-color: #004d80; height: 2px"
+          />
+          <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" style="height: 200px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30482.069585991638!2d78.29435671172955!3d17.254714790830658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8da620f9d%3A0x19d0d79257022687!2sVardhaman%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1643542439895!5m2!1sen!2sin"
+                frameborder="0"></iframe>
+            </div>
+    </div>
+</div>
+<!-- Grid row -->
+</div>
+<br>
+<br>
+<br>
+<br>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div
+ class="text-center p-3"
+ style="background-color: rgba(0, 0, 0, 0.2)"
+ >
+Copyrights © 2022 - All rights reserved
+</div>
+<!-- Copyright -->
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- owl carousel js file cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/js.js"></script>
+</body>
+
+</html>
